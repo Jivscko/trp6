@@ -58,22 +58,30 @@ progression and secret trophies), and `count` where a target number is published
 app/            the offline app (index.html, style.css, app.js, store.js, ui.js, roadmap.js, data/)
 screenshots/    4 real Playwright renders; first by name (1-tracker.jpg) is the cover
 scripts/        verify.py (32 offline/behavior checks) and shoot.py (screenshot capture)
+shots.json      the shot plan: file, path, view and viewport for each render
 main.ts         hands the entry in: copies app/ + screenshots/ to /output, writes dossier.json
 serve.ts        kit static server (unchanged)
 vendor/         kit's makefun-frontend.ts (unchanged)
 ```
+
+Screenshots are unedited chromium renders within the scorer's caps: at most 256 KiB per file,
+long side ≤ 1280 px, short side ≥ 480 px. `scripts/shoot.py` seeds a mid-playthrough state
+through the app's own localStorage format and reaches every view by clicking the real UI.
 
 ## Verify & hand in
 
 ```sh
 cd app && python3 -m http.server 8123 &   # any static server with app/ at root
 python3 scripts/verify.py                 # 32 checks: no network, filters, spoiler, export/import…
+python3 scripts/shoot.py                  # regenerate the 4 screenshots against the same server
 MAKEFUN_OUTPUT_DIR=out node main.ts       # copies app/ + screenshots/ to out/, writes out/dossier.json
 ```
 
-`main.ts` runs on Node 22 with the standard library only, validates the 55-trophy data and the
-screenshot caps before handing in, and clears any previous hand-in so repeated runs write the
-same bytes. `/output` is the grader's destination; `MAKEFUN_OUTPUT_DIR` stands in for it elsewhere.
+`main.ts` runs on Node 22 with the standard library only. Before handing in it validates the
+55-trophy data (every trophy carries a guide), the 7-stage roadmap (point of no return named,
+every trophy on a rendered stage) and the screenshot count/size caps, then clears any previous
+hand-in so repeated runs write byte-identical output. `/output` is the grader's destination;
+`MAKEFUN_OUTPUT_DIR` stands in for it elsewhere.
 
 ## License
 

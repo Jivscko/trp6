@@ -7,10 +7,10 @@
 // vendor/makefun-frontend.ts is the kit's copy, unchanged: the scorer rebuilds the dossier with the
 // same library and compares byte for byte, so the caps below must stay the scorer's own.
 //
-// Revision pass: the output directory is now cleared of any previous hand-in before copying (two
-// runs write the same bytes even when the output dir is reused), and the trophy data and screenshots
-// are sanity-checked before buildDossier runs, so a broken entry fails with a clear message instead
-// of a library error.
+// Revision pass: the output directory is cleared of any previous hand-in before copying (two
+// runs write the same bytes even when the output dir is reused), and the trophy data, roadmap
+// stages and screenshots are sanity-checked before buildDossier runs, so a broken entry fails
+// with a clear message instead of a library error.
 
 import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -29,6 +29,22 @@ if (!Array.isArray(trophies) || trophies.length !== 55) {
 for (const t of trophies) {
   if (!t.name || typeof t.guide !== 'string' || !t.guide.trim()) {
     throw new Error(`trophy ${t.id ?? '?'} (${t.name ?? 'unnamed'}) has no guide text`);
+  }
+}
+
+// Pre-flight: the roadmap data must hold the 7 stages and name the point of no return,
+// and every trophy must sit on a stage the roadmap actually renders.
+const stagesData = JSON.parse(readFileSync(join(here, 'app', 'data', 'stages.json'), 'utf8'));
+if (!Array.isArray(stagesData.stages) || stagesData.stages.length !== 7) {
+  throw new Error(`stages.json must hold exactly 7 roadmap stages, found ${Array.isArray(stagesData.stages) ? stagesData.stages.length : 'no array'}`);
+}
+if (typeof stagesData.point_of_no_return !== 'string' || !stagesData.point_of_no_return.trim()) {
+  throw new Error('stages.json must name the point of no return');
+}
+const stageNums = new Set(stagesData.stages.map((s) => s.stage));
+for (const t of trophies) {
+  if (!stageNums.has(t.stage)) {
+    throw new Error(`trophy ${t.id} (${t.name}) sits on stage ${t.stage}, which the roadmap does not render`);
   }
 }
 
