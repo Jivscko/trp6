@@ -1,0 +1,1 @@
+{"name": "leonida-legend-gta6-trophy-guide", "version": "1.0.0", "private": true, "type": "module", "description": "Offline GTA VI trophy guide & tracker — make.fun bounty gta6-trophy-guide-01 entry. main.ts hands in app/ + screenshots/; serve.ts serves app/ locally.", "scripts": {"start": "node serve.ts", "build": "node main.ts"}}

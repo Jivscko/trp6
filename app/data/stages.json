@@ -1,0 +1,47 @@
+{
+ "point_of_no_return": "Stage 4 — the final mission (You Gotta Know When to Get Off). Every missable in stages 1–3 must be earned before you start it.",
+ "stages": [
+  {
+   "stage": 1,
+   "title": "Opening & Chapter 1",
+   "summary": "Start the story. Gone Fishing (the opening mission per the starter notes) and Chapter 1 complete the first two story checkpoints. Nothing optional is needed yet — just play.",
+   "warning": null
+  },
+  {
+   "stage": 2,
+   "title": "Chapters 2–4: the Vice City run",
+   "summary": "Complete Chapters 2, 3 and 4, earning each named story mission trophy (Trust, Break the Bank, Family Matters, DWNFALL, Hi-Jacked, Snow Storm) as the mission appears — the official list publishes no chapter-to-mission mapping. Take the one-off scenes and moments (Fair Game, Catch Me If You Can, In The Beginning…, Personal Best, Bad Luck, I Guess, The Truth Is Out There) when the story offers them. Choices for Actions Speak Louder accumulate throughout.",
+   "warning": "One-time scenes live here. Do not skip partnership scenes, the Ocean Beach cocktail moment, Bret's unique hunt or the VCIA escape — the official list does not confirm mission replay."
+  },
+  {
+   "stage": 3,
+   "title": "Strangers & contact finales — the missable sweep",
+   "summary": "Before the finale: finish all five named contact strands to their FINAL missions (Andy, Kenton, Billy, Randy, Tyrone) and complete 8 stranger mission strands for Strangers & Freaks. The contact trophies award only at each strand's last mission, so follow every chain to its end.",
+   "warning": "Last safe stop. All five contact finales are missable one-time content — clear them before Stage 4."
+  },
+  {
+   "stage": 4,
+   "title": "The finale — point of no return",
+   "summary": "Complete the final mission for the gold You Gotta Know When to Get Off. Only start it once stages 1–3 are fully ticked. If the game offers manual saves, keep one from before the finale. Let the Actions Speak Louder choice counter (500 per the starter notes) finish filling.",
+   "warning": "POINT OF NO RETURN. Starting the final mission with any missable outstanding risks a locked platinum if the game has no mission replay."
+  },
+  {
+   "stage": 5,
+   "title": "Activities, combat & crime spree",
+   "summary": "The repeatable grind, safe after the story: tour all 9 activity types (Master of None), gold all 42 Shooting Range challenges (The Shootist), win drone races at all 14 Top Fun locations, win 20 different races, beat Cal fishing, finish an arcade game, and reach 50 challenges. Then the crime set: partner wanted-level escapes (Hot Together), the 3-shop robbery chain (Retail Therapy), 5 bank vaults with escapes, an armored truck, one illegal operation per each of the 9 gangs, stealth jewelry robbery, Combat Focus 5-kill, showroom smash-out, bowling at Kolt & Associates, melee drive-by, the Rhino tank moment, and 250 stunts.",
+   "warning": null
+  },
+  {
+   "stage": 6,
+   "title": "Collectibles, map sweep & money",
+   "summary": "One grand tour of Leonida feeds several trophies at once: all 52 areas (The Goodtime State), 18 meditation spots, 100 WAiNK locations, 100 vehicles discovered, 3 full card sets. Then the economy: launder $250,000 of Marked Bills, spend $100,000 in shops, buy all 8 garage properties, and register 10 vehicles to Scooter Bros.",
+   "warning": null
+  },
+  {
+   "stage": 7,
+   "title": "100% & the platinum",
+   "summary": "With everything else earned, attain the game's 100% completion stat for the gold A Long Road — the in-game percentage is the authority, since the official description does not enumerate its checklist. Vice Got a Price! (platinum) unlocks the moment the other 54 are earned.",
+   "warning": null
+  }
+ ]
+}
